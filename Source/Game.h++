@@ -5,10 +5,13 @@
 #include "Terms.h++"
 bool Game_Done = false;
 std::string Answer;
-class Game {
-    public:
-    void Start() {
-        while (Game_Done == false) {
+class Game
+{
+public:
+    void Start()
+    {
+        while (Game_Done == false)
+        {
         }
     }
 };
