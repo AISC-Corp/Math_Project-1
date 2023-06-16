@@ -1,31 +1,27 @@
 #include <iostream>
-#include <list>
-#include "Player.h++"
-#include "Terms.h++"
-#include "Card.h++"
 #include "Card.c++"
-bool Game_Done = false;
-std::string Answer;
-std::string Answer2;
-std::string LevelAnswer;
+
 class Game
 {
+
 private:
+    std::string Answer;
+    std::string Answer2;
+    std::string LevelAnswer;
     Card LevelCards1;
     Card LevelCards2;
     Card MyCard;
     Card TheirCard;
 
 public:
-    Game();
     void Start()
     {
         App app;
-        while (Game_Done == false)
+        while (true)
         {
-            std::cout << "Do you want to continue? Y/N";
+            std::cout << "Do you want to play? Y/N ";
             std::cin >> Answer2;
-            if (Answer2 == "N")
+            if (Answer2 == "N" || Answer2 == "n")
             {
                 break;
             }
@@ -44,7 +40,7 @@ public:
     {
         std::cout << "Which attribute do you want to clash? You can choose Speed, Strength, or Happiness." << std::endl;
         std::cin >> Answer;
-        if (Answer == "Speed")
+        if (Answer == "Speed" || Answer == "speed")
         {
             if (MyCard.Speed > TheirCard.Speed)
             {
@@ -57,7 +53,7 @@ public:
                 std::cout << "I lost..." << std::endl;
             }
         }
-        if (Answer == "Strength")
+        if (Answer == "Strength" || Answer == "strength")
         {
             if (MyCard.AttackDmg > TheirCard.AttackDmg)
             {
@@ -70,7 +66,7 @@ public:
                 std::cout << "I lost..." << std::endl;
             }
         }
-        if (Answer == "Happiness")
+        if (Answer == "Happiness" || Answer == "happiness")
         {
             if (MyCard.Happiness > TheirCard.Happiness)
             {
@@ -90,7 +86,7 @@ public:
         std::cout << "Do you want to fight the first cat or the second?" << std::endl;
         std::cin >> LevelAnswer;
 
-        if (LevelAnswer == "first")
+        if (LevelAnswer == "first" || LevelAnswer == "First")
         {
             MyCard = LevelCards1;
             TheirCard = LevelCards2;
