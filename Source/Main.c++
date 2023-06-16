@@ -1,7 +1,7 @@
 #include <iostream>
-#include "Game.h++"
+#include "Game1.c++"
 #include "Card.h++"
-Game MathProject;
 int Main() {
+  Game MathProject = new Game();
   MathProject.Start();
 }

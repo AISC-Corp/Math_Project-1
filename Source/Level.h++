@@ -4,6 +4,7 @@
 #include "Player.h++"
 #include "Terms.h++"
 #include "Random.h++"
+#include "Game.h++"
 int CatMonsAmount;
 int CatMonRepeat;
 std::string CatMonPriority;
@@ -13,8 +14,6 @@ std::string CatMon3;
 std::string LevelAnswer;
 bool BattleDone = true;
 class Level {
-    Card LevelCards1;
-    Card LevelCards2;
     void Start() {
         print("The CatMons you're going up against are: ");
         print(LevelCards1.Tag);
@@ -52,10 +51,16 @@ class Level {
             eprint("The battle begins!");
             while (BattleDone != true) {
                 print("Do you want to fight the first cat or the second?");
-                cin >> LevelAnswer;
+                std::cin >> LevelAnswer;
+                Card Any;
                 if (LevelAnswer == "first") {
-                    CatMon1.
+                    Any = LevelCards1;
                 }
+                else {
+                    Any = LevelCards2;
+                }
+            Game MyGame = new Game();
+            MyGame.Start(Any);
             }
         }
     }
