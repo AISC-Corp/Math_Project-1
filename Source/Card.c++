@@ -6,25 +6,40 @@
 class App
 {
 private:
-    Card* AllCard[11];
+    Card AllCard[11];
+
 public:
-    Card* GetCard()
+    App();
+    Card GetCard()
     {
-        AllCard[0] = new Card(10, 10, 10, "Cat");
-        AllCard[1] = new Card(40, 60, 70, "Water Cat");
-        AllCard[2] = new Card(10, 80, 90, "Wind Cat");
-        AllCard[3] = new Card(35, 20, 60, "Fire Cat");
-        AllCard[4] = new Card(10, 20, 60, "Earth Cat");
-        AllCard[5] = new Card(25, 90, 70, "Lightning Cat");
-        AllCard[6] = new Card(20, 120, 50, "Velocity Cat");
-        AllCard[7] = new Card(30, 90, 90, "Neon Cat");
-        AllCard[8] = new Card(10, 80, 99, "Magic Cat");
-        AllCard[9] = new Card(45, 99, 99, "Light Cat");
-        AllCard[10] = new Card(50, 70, 70, "Dark Cat");
+        Card c1(10, 10, 10, "Cat");
+        Card c2(40, 60, 70, "Water Cat");
+        Card c3(10, 80, 90, "Wind Cat");
+        Card c4(35, 20, 60, "Fire Cat");
+        Card c5(10, 20, 60, "Earth Cat");
+        Card c6(25, 90, 70, "Lightning Cat");
+        Card c7(20, 120, 50, "Velocity Cat");
+        Card c8(30, 90, 90, "Neon Cat");
+        Card c9(10, 80, 99, "Magic Cat");
+        Card c10(45, 99, 99, "Light Cat");
+        Card c11(50, 70, 70, "Dark Cat");
+
+        AllCard[0] = c1;
+        AllCard[1] = c2;
+        AllCard[2] = c3;
+        AllCard[3] = c4;
+        AllCard[4] = c4;
+        AllCard[5] = c6;
+        AllCard[6] = c7;
+        AllCard[7] = c8;
+        AllCard[8] = c9;
+        AllCard[9] = c10;
+        AllCard[10] = c11;
         int Index = RandNum();
         return AllCard[Index];
     }
-    int RandNum() {
+    int RandNum()
+    {
         return rand() % 10 + 1;
     }
 };
